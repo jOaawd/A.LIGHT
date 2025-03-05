@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over And Over</title>
+    <link rel="icon" href="https://i.pinimg.com/originals/86/5e/16/865e16a9f1baff745f3dae416bde8196.gif">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: black;
+            overflow: hidden;
+            color: white;
+            padding: 20px;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.gifer.com/C56n.gif') repeat center center fixed;
+            background-size: cover;
+            opacity: 0.4;
+            z-index: -1;
+        }
+        
+        h1 {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        button {
+            background: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff5a00;
+            transform: scale(1.1);
+        }
+        input {
+            border-radius: 10px;
+            height: 40px;
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #fff;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        input:focus {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: #ff8c00;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 25px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #ff8c00;
+        }
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+    </style>
+</head>
+<body>
+    <h1>A.LIGHT</h1>
+    <p>Developed by FMODE <br>Lags your chromebook so the shit blockers dont detect it, prob...</p>
+    <input id='url' placeholder='Put Url Here'>
+    <br><br>
+    <button onclick='openUrl()'>Open URL</button>
+    <br><br>
+    <label class="switch">
+        <input type="checkbox" id="sexybutton">
+        <span class="slider"></span>
+    </label>
+    <span>Sick Option (Open in about:blank, with onbeforeunload function)</span>
+    <script>
+        function openUrl() {
+            let url = document.getElementById('url').value.trim();
+            const randomString = 'mnx72a583bxl1l0v3amyk319zvplq647wkjhd52os3pfgz85trvnkjb0lzx16wkb2'.repeat(16380);
+            let sexybutton = document.getElementById('sexybutton'); 
+            let movethebodylikeasexygirl = sexybutton.checked;
+
+            if (!url) return;
+
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                url = "https://google.com/search?q=" + encodeURIComponent(url);
+            }
+
+            if (movethebodylikeasexygirl) { 
+                let newWindow = window.open("about:blank", "_blank");
+                if (newWindow) {
+                    newWindow.document.write(`<iframe src="${url + "#" + randomString}" style="width:100%; height:100vh; border:none;"></iframe>`);
+                    newWindow.document.body.style.margin = "0";
+                    newWindow.document.body.style.overflow = "hidden";
+                    newWindow.onbeforeunload = function() {
+                        return "Are you sure you want to close this page?";
+                    };
+                }
+            } else {
+                window.open(url + "#" + randomString, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>
