@@ -9,6 +9,16 @@ Usage:
 - This exploit takes advantage of the vulnerability, which causes blockers to overload when faced with too much load.
 - Proceed with caution as running this exploit can have unintended consequences.
 
+
+*Working Extensions*
+- Lightspeed
+-  Lanschool
+-  Cisco umbrella (sorta)
+-  blocksi
+
+*Not Working*
+-GoGuardin (i hate ts)
+
 Disclaimer:
 This exploit is for educational purposes only. Use responsibly and understand the potential risks of exploiting extensions vulnerabilities.
 
