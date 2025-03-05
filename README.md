@@ -13,6 +13,6 @@ Disclaimer:
 This exploit is for educational purposes only. Use responsibly and understand the potential risks of exploiting extensions vulnerabilities.
 
 Credits:
-- Developer: [FMODE]
+- Developer: FMODE
 - Vulnerability: A.L
 
